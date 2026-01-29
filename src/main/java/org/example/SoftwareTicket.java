@@ -18,7 +18,7 @@ public class SoftwareTicket extends Ticket {
     public boolean isAffectsLogin() { return affectsLogin; }
 
     // -----------------------------------------
-    // TODO #3 (Inheritance)
+    // xTODO #3 (Inheritance)
     // Implement urgencyScore() for software tickets.
     // Suggested scoring:
     //   score = priority*10 + daysOpen
@@ -29,7 +29,10 @@ public class SoftwareTicket extends Ticket {
     // -----------------------------------------
     @Override
     public int urgencyScore() {
-        // TODO #3
-        return -1;
+        // xTODO #3
+        return (getPriority() * 10) + getDaysOpen()
+                + (isSecurityIssue() ? 25: 0)
+                + (isAffectsLogin() ? 15 : 0)
+                + (getSystem().equals("VPN") ? 8 : 0);
     }
 }
