@@ -22,7 +22,7 @@ public class Main {
         board.printAll();
 
         int targetId = 108;
-        Ticket found = board.findByIdBinarySearch(targetId); // TODO #4
+        Ticket found = board.findByIdBinarySearch(targetId); // xTODO #4
         System.out.println("\nSearch result for ID " + targetId + ": " + (found == null ? "NOT FOUND" : found));
 
         // Demonstrate method overloading (xTODO #1)
