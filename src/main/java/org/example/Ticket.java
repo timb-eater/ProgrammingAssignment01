@@ -23,7 +23,7 @@ public abstract class Ticket {
     public abstract int urgencyScore();
 
     // -------------------------------
-    // TODO #1 (Method Overloading)
+    // xTODO #1 (Method Overloading)
     // Implement ALL three overloads.
     // - Base estimate depends on priority and daysOpen.
     // - Add complexityFactor if provided (>=1).
@@ -34,18 +34,21 @@ public abstract class Ticket {
     // -------------------------------
 
     public int estimateResolutionHours() {
-        // TODO #1a
-        return -1;
+        // xTODO #1a
+        int base = (6 - getPriority()) * 2  + getDaysOpen();
+        return Math.max(1, base);
     }
 
     public int estimateResolutionHours(int complexityFactor) {
-        // TODO #1b
-        return -1;
+        // xTODO #1b
+        int base = (6 - getPriority()) * 2  + getDaysOpen();
+        return Math.max(1, base * complexityFactor);
     }
 
     public int estimateResolutionHours(int complexityFactor, int afterHoursPenalty) {
-        // TODO #1c
-        return -1;
+        // xTODO #1c
+        int base = (6 - getPriority()) * 2  + getDaysOpen();
+        return Math.max(1, base * complexityFactor + afterHoursPenalty);
     }
 
     @Override
