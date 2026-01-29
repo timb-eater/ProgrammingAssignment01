@@ -18,7 +18,7 @@ public class HardwareTicket extends Ticket {
     public int getAffectedUsers() { return affectedUsers; }
 
     // -----------------------------------------
-    // TODO #2 (Inheritance)
+    // xTODO #2 (Inheritance)
     // Implement urgencyScore() for hardware tickets.
     // Suggested scoring:
     //   score = priority*10 + daysOpen*2
@@ -29,7 +29,10 @@ public class HardwareTicket extends Ticket {
     // -----------------------------------------
     @Override
     public int urgencyScore() {
-        // TODO #2
-        return -1;
+        // xTODO #2
+        return (getPriority() * 10) + (getDaysOpen() * 2)
+                + (isLabCritical() ? 20 : 0)
+                + Math.min(getAffectedUsers(), 30)
+                + (getDeviceType().equals("Printer") ? 5 : 0);
     }
 }
